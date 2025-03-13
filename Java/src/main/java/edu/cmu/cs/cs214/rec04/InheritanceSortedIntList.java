@@ -1,16 +1,30 @@
 package edu.cmu.cs.cs214.rec04;
 
-/**
- * InheritanceSortedIntList -- a variant of a SortedIntList that keeps
- * count of the number of attempted element insertions (not to be confused
- * with the current size, which goes down when an element is removed)
- * and exports an accessor (totalAdded) for this count.
- *
- * @author Nora Shoemaker
- *
- */
+public class InheritanceSortedIntList extends SortedIntList {
+    private int totalAdded = 0; // Нэмэгдсэн элементүүдийн тоо
 
-public class InheritanceSortedIntList {
-    // Write your implementation below with API documentation
+        // Overriding add() to ensure correct tracking of total additions
+        @Override
+        public boolean add(int num) {
+            boolean added = super.add(num);  // Call the parent class's add method
+            if (added) {
+                totalAdded++;  // Increment only when an element is actually added
+            }
+            return added;
+        }
 
+        // Overriding addAll() to track additions correctly
+        @Override
+        public boolean addAll(IntegerList list) {
+            boolean result = false;
+            for (int i = 0; i < list.size(); i++) {
+                result |= this.add(list.get(i));  // Calls the overridden add() method
+            }
+            return result;
+        }
+
+    // Нэмэгдсэн нийт элементийн тоог буцаах
+    public int getTotalAdded() {
+        return totalAdded;
+    }
 }
