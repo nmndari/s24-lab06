@@ -41,7 +41,7 @@ public class DelegationSortedIntListTest {
      list1.add(4);
      list1.add(2);
      // check that the total number of elements added is 5.
-     assertTrue(list1.getTotalAdded() == 5);
+         assertEquals(5, list1.getTotalAdded());
      // helper function that prints out the contents of an IntegerList
      printList(list1);
      }
@@ -59,20 +59,20 @@ public class DelegationSortedIntListTest {
      list1.add(2);
 
      // check that the total number of elements added is 5.
-     assertTrue(list1.getTotalAdded() == 5);
+         assertEquals(5, list1.getTotalAdded());
 
      // add 2 elements to a second list.
      list2.add(3);
      list2.add(0);
 
      // check that the total number of elements added is 2.
-     assertTrue(list2.getTotalAdded() == 2);
+         assertEquals(2, list2.getTotalAdded());
 
      // add the first list (5 elements) to our second list (2 elements).
      list2.addAll(list1);
 
      // check that the total number of elements added to our second list is 7.
-     assertTrue(list2.getTotalAdded() == 7);
+         assertEquals(7, list2.getTotalAdded());
      }
 
      /**
