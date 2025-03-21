@@ -53,6 +53,7 @@ public class DelegationSortedIntList implements IntegerList {
     }
 
     // Returns the number of attempted insertions (not the current size)
+    @Override
     public int getTotalAdded() {
         return totalAdded;  // Return the count of insertions
     }

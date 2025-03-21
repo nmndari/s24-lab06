@@ -1,6 +1,6 @@
 package edu.cmu.cs.cs214.rec04;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -81,4 +81,8 @@ public class InheritanceSortedIntListTest {
      }
      System.out.println();
      }
+
+    public InheritanceSortedIntList getList2() {
+        return list2;
+    }
 }
